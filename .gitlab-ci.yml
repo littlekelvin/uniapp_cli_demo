@@ -1,9 +1,22 @@
 variables:
-  DEPLOY_PATH: D:\deploy\mynews\
+  WEIXIN_DEPLOY_PATH: D:\deploy\weixin\mynews\
+  DINGDING_DEPLOY_PATH: D:\deploy\dingding\mynews\
 
 stages:
+  - test
   - build
   - deploy
+
+test:
+  stage: test
+  only:
+    - master
+  tags: 
+    - WP_WEIXIN
+  before_script:
+    - whoami
+  script:
+    - echo "test job"
 
 build:
   stage: build
@@ -15,11 +28,13 @@ build:
     - echo "build job"
     - npm install --registry https://registry.npm.taobao.org
     - npm run build:mp-weixin
+    - npm run build:custom mp-dingtalk
   tags:
     - WP_WEIXIN
   artifacts:
     paths:
       - dist/build/mp-weixin
+      - dist/build/mp-alipay
     expire_in: 3 days
 
 deploy:
@@ -32,5 +47,6 @@ deploy:
     - whoami
   script:
     - echo "deploy job"
-    - xcopy .\dist\build\mp-weixin $DEPLOY_PATH /s/y
-    - C:\softwareInstalled\wechatdevtoosRC\微信web开发者工具\cli.bat upload --project $DEPLOY_PATH -v 3.0.1 -d '新闻小程序测试demo'
+    - xcopy .\dist\build\mp-weixin $WEIXIN_DEPLOY_PATH /s/y
+    - xcopy .\dist\build\mp-alipay $DINGDING_DEPLOY_PATH /s/y
+    - C:\softwareInstalled\wechatdevtoosRC\微信web开发者工具\cli.bat upload --project $WEIXIN_DEPLOY_PATH -v 3.0.1 -d '新闻小程序测试demo'
