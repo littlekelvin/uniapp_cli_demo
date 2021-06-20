@@ -1,0 +1,25 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  only:
+    - master
+  tags: 
+	- WP_WEIXIN
+  before_script:
+	- whoami
+  script:
+    - echo "build job"
+	
+deploy:
+  stage: deploy
+  only:
+    - master
+  tags: 
+	- WP_WEIXIN
+  before_script:
+	- whoami
+  script:
+    - echo "deploy job"
