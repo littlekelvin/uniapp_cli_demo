@@ -1,17 +1,19 @@
 <template>
 	<view id="content">
-		<view class="title">{{post.title}} kelvin deploy test</view>
+		<view class="title">{{post.title}} kelvin deploy test1</view>
 		<view class="details">
-			<rich-text :nodes="post.content"></rich-text>
+			<rich-text :nodes="richNodes"></rich-text>
 		</view>
 	</view>
 </template>
 
 <script>
+	import parseHtml from '@/common/html-parser.js'
 	export default {
 		data() {
 			return {
-				post: {}
+				post: {},
+				richNodes: []
 			}
 		},
 		onLoad(e) {
@@ -20,6 +22,7 @@
 				method: 'GET',
 				success: res => {
 					this.post = res.data
+					this.richNodes = parseHtml(this.post.content)
 				}
 			})
 		},
