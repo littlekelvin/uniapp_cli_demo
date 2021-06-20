@@ -6,10 +6,10 @@ build:
   stage: build
   only:
     - master
-  tags: 
-	- WP_WEIXIN
+  tags:
+	  - WP_WEIXIN
   before_script:
-	- whoami
+	  - whoami
   script:
     - echo "build job"
 	
@@ -18,8 +18,8 @@ deploy:
   only:
     - master
   tags: 
-	- WP_WEIXIN
+	  - WP_WEIXIN
   before_script:
-	- whoami
+	  - whoami
   script:
     - echo "deploy job"
