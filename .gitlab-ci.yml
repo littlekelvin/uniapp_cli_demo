@@ -1,3 +1,6 @@
+variables:
+  DEPLOY_PATH: D:\deploy\mynews\
+
 stages:
   - build
   - deploy
@@ -10,8 +13,13 @@ build:
     - whoami
   script:
     - echo "build job"
+    - npm run build:mp-weixin
   tags:
     - WP_WEIXIN
+  artifacts:
+    paths:
+      - dist/build/mp-weixin
+    expire_in: 3 days
 
 deploy:
   stage: deploy
@@ -23,3 +31,4 @@ deploy:
     - whoami
   script:
     - echo "deploy job"
+    - xcopy .\dist\build\mp-weixin $DEPLOY_PATH /s/y
