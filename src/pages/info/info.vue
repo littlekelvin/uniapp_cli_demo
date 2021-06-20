@@ -1,6 +1,6 @@
 <template>
 	<view id="content">
-		<view class="title">{{post.title}} kelvin</view>
+		<view class="title">{{post.title}} kelvin deploy test</view>
 		<view class="details">
 			<rich-text :nodes="post.content"></rich-text>
 		</view>
