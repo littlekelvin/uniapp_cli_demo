@@ -2,8 +2,20 @@ variables:
   DEPLOY_PATH: D:\deploy\mynews\
 
 stages:
+  - test
   - build
   - deploy
+
+test:
+  stage: test
+  only:
+    - master
+  tags: 
+    - WP_WEIXIN
+  before_script:
+    - whoami
+  script:
+    - echo "test job"
 
 build:
   stage: build
