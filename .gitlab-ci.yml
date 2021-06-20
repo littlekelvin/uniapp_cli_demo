@@ -33,3 +33,4 @@ deploy:
   script:
     - echo "deploy job"
     - xcopy .\dist\build\mp-weixin $DEPLOY_PATH /s/y
+    - C:\softwareInstalled\wechatdevtoosRC\微信web开发者工具\cli.bat upload --project $DEPLOY_PATH -v 3.0.1 -d '新闻小程序测试demo'
