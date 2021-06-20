@@ -1,3 +1,6 @@
+variables:
+  DEPLOY_PATH: D:\deploy\mynews\
+
 stages:
   - build
   - deploy
@@ -6,20 +9,28 @@ build:
   stage: build
   only:
     - master
-  tags: 
-	- WP_WEIXIN
   before_script:
-	- whoami
+    - whoami
   script:
     - echo "build job"
-	
+    - npm install --registry https://registry.npm.taobao.org
+    - npm run build:mp-weixin
+  tags:
+    - WP_WEIXIN
+  artifacts:
+    paths:
+      - dist/build/mp-weixin
+    expire_in: 3 days
+
 deploy:
   stage: deploy
   only:
     - master
   tags: 
-	- WP_WEIXIN
+    - WP_WEIXIN
   before_script:
-	- whoami
+    - whoami
   script:
     - echo "deploy job"
+    - xcopy .\dist\build\mp-weixin $DEPLOY_PATH /s/y
+    - C:\softwareInstalled\wechatdevtoosRC\微信web开发者工具\cli.bat upload --project $DEPLOY_PATH -v 3.0.1 -d '新闻小程序测试demo'
