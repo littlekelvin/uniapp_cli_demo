@@ -62,7 +62,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   .uni-media-list-body {
     height: auto;
   }

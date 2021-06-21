@@ -42,7 +42,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   #content {
     padding: 10upx 2%;
     width: 96%;
