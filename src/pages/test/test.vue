@@ -1,19 +1,13 @@
 <template>
-	<view>
-		
-	</view>
+  <view> </view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				
-			};
-		}
-	}
+  export default {
+    data() {
+      return {}
+    }
+  }
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

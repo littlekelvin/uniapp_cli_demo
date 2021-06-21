@@ -2,24 +2,25 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true,
+    node: true
   },
   // 配置js全局变量，因为是uni-app，全局的uni是不需要引入的，还有5+的plus对象
   globals: {
     uni: 'readonly',
     plus: 'readonly',
-    wx: 'readonly',
+    wx: 'readonly'
   },
-  extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/prettier'],
+  extends: ['plugin:vue/essential', 'eslint:recommended', 'standard'],
   parserOptions: {
     parser: 'babel-eslint',
+    sourceType: 'module'
   },
   rules: {
     'no-console': [
       'warn',
       {
-        allow: ['warn', 'error'],
-      },
+        allow: ['warn', 'error']
+      }
     ],
     'no-eval': 'error',
     'no-alert': 'error',
@@ -29,9 +30,9 @@ module.exports = {
         singleline: 10,
         multiline: {
           max: 1,
-          allowFirstLine: false,
-        },
-      },
+          allowFirstLine: false
+        }
+      }
     ],
     'vue/singleline-html-element-content-newline': 'off',
     'vue/multiline-html-element-content-newline': 'off',
@@ -43,16 +44,16 @@ module.exports = {
       2,
       '1tbs',
       {
-        allowSingleLine: true,
-      },
+        allowSingleLine: true
+      }
     ],
     camelcase: [
       0,
       {
-        properties: 'always',
-      },
+        properties: 'always'
+      }
     ],
-    'comma-dangle': [2, 'only-multiline'],
+    'comma-dangle': [2, 'never'],
     'comma-style': [2, 'last'],
     'constructor-super': 2,
     curly: [2, 'multi-line'],
@@ -62,15 +63,15 @@ module.exports = {
       'warn',
       'always',
       {
-        null: 'ignore',
-      },
+        null: 'ignore'
+      }
     ],
     'generator-star-spacing': [
       2,
       {
         before: true,
-        after: true,
-      },
+        after: true
+      }
     ],
     'handle-callback-err': [2, '^(err|error)$'],
     'jsx-quotes': [2, 'prefer-single'],
@@ -78,8 +79,8 @@ module.exports = {
       2,
       {
         newIsCap: true,
-        capIsNew: false,
-      },
+        capIsNew: false
+      }
     ],
     'new-parens': 2,
     'no-array-constructor': 2,
@@ -113,8 +114,8 @@ module.exports = {
       2,
       {
         allowLoop: false,
-        allowSwitch: false,
-      },
+        allowSwitch: false
+      }
     ],
     'no-lone-blocks': 2,
     'no-mixed-spaces-and-tabs': 1,
@@ -151,8 +152,8 @@ module.exports = {
     'no-unneeded-ternary': [
       2,
       {
-        defaultAssignment: false,
-      },
+        defaultAssignment: false
+      }
     ],
     'no-unreachable': 2,
     'no-unsafe-finally': 2,
@@ -160,8 +161,8 @@ module.exports = {
       2,
       {
         vars: 'all',
-        args: 'none',
-      },
+        args: 'none'
+      }
     ],
     'no-useless-call': 2,
     'no-useless-computed-key': 2,
@@ -172,8 +173,8 @@ module.exports = {
     'one-var': [
       2,
       {
-        initialized: 'never',
-      },
+        initialized: 'never'
+      }
     ],
     'operator-linebreak': [
       2,
@@ -181,9 +182,9 @@ module.exports = {
       {
         overrides: {
           '?': 'before',
-          ':': 'before',
-        },
-      },
+          ':': 'before'
+        }
+      }
     ],
     'padded-blocks': [2, 'never'],
     quotes: [
@@ -191,15 +192,15 @@ module.exports = {
       'single',
       {
         avoidEscape: true,
-        allowTemplateLiterals: true,
-      },
+        allowTemplateLiterals: true
+      }
     ],
     'semi-spacing': [
       2,
       {
         before: false,
-        after: true,
-      },
+        after: true
+      }
     ],
 
     'space-in-parens': [2, 'never'],
@@ -208,8 +209,8 @@ module.exports = {
       2,
       {
         words: true,
-        nonwords: false,
-      },
+        nonwords: false
+      }
     ],
     'template-curly-spacing': [2, 'never'],
     'use-isnan': 2,
@@ -234,6 +235,6 @@ module.exports = {
     'spaced-comment': 0,
     'space-before-function-paren': 0,
     'arrow-spacing': 0,
-    'object-curly-spacing': 0,
-  },
+    'object-curly-spacing': 0
+  }
 }

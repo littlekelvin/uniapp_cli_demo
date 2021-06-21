@@ -17,7 +17,7 @@
     data() {
       return {
         post: {},
-        richNodes: [],
+        richNodes: []
       }
     },
     onLoad(e) {
@@ -27,7 +27,7 @@
         success: (res) => {
           this.post = res.data
           this.richNodes = parseHtml(this.post.content)
-        },
+        }
       })
     },
     methods: {
@@ -37,8 +37,8 @@
         } else {
           i18n.locale = 'en-US'
         }
-      },
-    },
+      }
+    }
   }
 </script>
 

@@ -12,7 +12,7 @@ module.exports = {
   // jsx单引号 default:false
   jsxSingleQuote: true,
   // 最后一个对象元素加逗号 default:"es5"
-  trailingComma: 'es5',
+  trailingComma: 'none',
   // 在对象字面量声明所使用的的花括号后（{）和前（}）输出空格 default:true
   bracketSpacing: true,
   // 将 > 多行 JSX 元素放在最后一行的末尾，而不是单独放在下一行（不适用于自闭元素）。default:false
@@ -41,8 +41,8 @@ module.exports = {
     {
       files: '*.md',
       options: {
-        tabWidth: 2,
-      },
-    },
-  ],
+        tabWidth: 2
+      }
+    }
+  ]
 }

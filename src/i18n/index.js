@@ -10,16 +10,16 @@ const i18n = new VueI18n({
     'en-US': {
       index: {
         invite: 'Invite',
-        game: 'Game',
-      },
+        game: 'Game'
+      }
     },
     'zh-CN': {
       index: {
         invite: '邀请',
-        game: '游戏',
-      },
-    },
-  },
+        game: '游戏'
+      }
+    }
+  }
 })
 
 export default i18n

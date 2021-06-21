@@ -26,12 +26,12 @@
   export default {
     data() {
       return {
-        news: [],
+        news: []
       }
     },
     onLoad() {
       uni.showLoading({
-        title: 'loading',
+        title: 'loading'
       })
       uni.request({
         url: 'https://unidemo.dcloud.net.cn/api/news',
@@ -39,7 +39,7 @@
         success: (res) => {
           this.news = res.data
           uni.hideLoading()
-        },
+        }
       })
     },
     methods: {
@@ -55,10 +55,10 @@
           console.log('prod')
         }
         uni.navigateTo({
-          url: '../info/info?newsId=' + e.currentTarget.dataset.newsid,
+          url: '../info/info?newsId=' + e.currentTarget.dataset.newsid
         })
-      },
-    },
+      }
+    }
   }
 </script>
 
