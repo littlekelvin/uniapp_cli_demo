@@ -20,5 +20,6 @@ module.exports = {
   moduleFileExtensions: ['js', 'json'],
   rootDir: __dirname,
   testMatch: ['**/src/test/unit/specs/**/*spec.js'], // 测试文件目录
-  testPathIgnorePatterns: ['/node_modules/']
+  testPathIgnorePatterns: ['/node_modules/'],
+  coverageDirectory: '<rootDir>/test/unit/coverage'
 }
