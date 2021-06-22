@@ -27,7 +27,6 @@ ci.upload({
 }).then(res => {
   console.log(res)
   console.log('上传成功')
-  process.exit(-1)
 }).catch(err => {
   console.log(err)
   console.log('上传失败')
