@@ -3,30 +3,53 @@ variables:
   DINGDING_DEPLOY_PATH: D:\deploy\dingding\mynews\
 
 stages:
+  - prepare
   - test
   - build
   - deploy
 
+prepare:
+  stage: prepare
+  cache:
+    key: mynews_demo_node_modules
+    paths:
+      - node_modules
+      - app/node_modules
+  script:
+    - npm install --registry https://registry.npm.taobao.org
+    - cd app && npm install
+  only:
+    - kelvin
+  tags:
+    - NODE_10_15_1
+
 test:
   stage: test
-  only:
-    - master
-  tags: 
-    - NODE_10_15_1
-  before_script:
-    - whoami
+#  cache:
+#    key: mynews_demo_node_modules
+#    policy: pull
+#    paths:
+#      - app/node_modules
   script:
     - echo "test job"
+  only:
+    - master
+  tags:
+    - NODE_10_15_1
 
 build:
   stage: build
-  only:
-    - kelvin
+  cache:
+    key: mynews_demo_node_modules
+    policy: pull
+    paths:
+      - app/node_modules
   script:
-    - cd app/
-    - npm install --registry https://registry.npm.taobao.org
+    - cd app
     - npm run build:mp-weixin
     - npm run build:custom mp-dingtalk
+  only:
+    - kelvin
   tags:
     - NODE_10_15_1
   artifacts:
@@ -37,9 +60,14 @@ build:
 
 deploy:
   stage: deploy
+  cache:
+    key: mynews_demo_node_modules
+    policy: pull
+    paths:
+      - node_modules
+  script:
+    - node tools/upload.wx.js
   only:
     - kelvin
   tags:
     - NODE_10_15_1
-  script:
-    - node tools/upload.wx.js
