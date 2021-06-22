@@ -1,9 +1,14 @@
 ## cli-hello
 
 ## Project setup
+- install dependency
 ```
 npm install
 ```
+- setup eslit and prettier
+webstorm -> settings -> search eslint -> 勾选 Auto Eslint Configuration 或者manual然后选择对应eslint的node_modules和配置即可 <br>
+webstorm -> settings -> search prettier -> 选择 node, 然后选择prettier的node_modules即可 <br>
+配置好之后就可以使用 ctrl+alt+shift+p 快捷键来格式化代码了 
 
 ### Compiles and hot-reloads for development
 - run dev env for weixin platform
