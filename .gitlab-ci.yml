@@ -54,8 +54,8 @@ build:
     - NODE_10_15_1
   artifacts:
     paths:
-      - dist/build/mp-weixin
-      - dist/build/mp-alipay
+      - app/dist/build/mp-weixin
+      - app/dist/build/mp-alipay
     expire_in: 3 days
 
 deploy:
