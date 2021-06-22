@@ -12,7 +12,7 @@ test:
   only:
     - master
   tags: 
-    - WP_WEIXIN
+    - NODE_10_15_1
   before_script:
     - whoami
   script:
