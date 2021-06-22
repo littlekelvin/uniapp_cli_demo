@@ -1,3 +1,4 @@
+const path = require('path')
 module.exports = {
   globalTeardown: '@dcloudio/uni-automator/dist/teardown.js',
   testEnvironment: '@dcloudio/uni-automator/dist/environment.js',
@@ -18,8 +19,8 @@ module.exports = {
   reporters: ['default'],
   watchPathIgnorePatterns: ['/node_modules/', '/dist/', '/.git/'],
   moduleFileExtensions: ['js', 'json'],
-  rootDir: __dirname,
-  testMatch: ['**/src/test/unit/specs/**/*spec.js'], // 测试文件目录
+  rootDir: path.resolve(__dirname, '../../'),
+  testMatch: ['<rootDir>/test/unit/specs/**/*spec.js'], // 测试文件目录
   testPathIgnorePatterns: ['/node_modules/'],
   coverageDirectory: '<rootDir>/test/unit/coverage'
 }

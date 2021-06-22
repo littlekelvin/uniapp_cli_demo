@@ -23,24 +23,20 @@
 
 <script>
   import _ from 'lodash'
+  import request from '@/common/utils/request'
+
   export default {
     data() {
       return {
         news: []
       }
     },
-    onLoad() {
+    async onLoad() {
       uni.showLoading({
         title: 'loading'
       })
-      uni.request({
-        url: 'https://unidemo.dcloud.net.cn/api/news',
-        method: 'GET',
-        success: (res) => {
-          this.news = res.data
-          uni.hideLoading()
-        }
-      })
+      const res = await request.get({ url: '/news' })
+      this.news = res
     },
     methods: {
       openInfo(e) {
