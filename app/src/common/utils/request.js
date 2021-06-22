@@ -22,10 +22,10 @@ const request = ({ url = '', method = 'GET', date = {}, header = {} }) => {
 }
 
 const requestObj = {
-    get: ({url, params = {}}) => {
-        return request({url, data: params})
-    },
-    request
+  get: (url, params = {}) => {
+    return request({ url, data: params })
+  },
+  request
 }
 
 export default requestObj

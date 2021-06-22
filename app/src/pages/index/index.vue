@@ -23,7 +23,7 @@
 
 <script>
   import _ from 'lodash'
-  import request from '@/common/utils/request'
+  import { getNewsList } from '@/api/news.api'
 
   export default {
     data() {
@@ -35,7 +35,7 @@
       uni.showLoading({
         title: 'loading'
       })
-      const res = await request.get({ url: '/news' })
+      const res = await getNewsList()
       this.news = res
     },
     methods: {
