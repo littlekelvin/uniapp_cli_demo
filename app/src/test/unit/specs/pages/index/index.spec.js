@@ -1,4 +1,3 @@
-
 describe('index pages test.vue', () => {
     let page
     beforeAll(async done => {
