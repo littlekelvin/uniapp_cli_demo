@@ -1,0 +1,12 @@
+{
+  "name": "mynews",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "miniprogram-ci": "^1.2.3"
+  },
+  "wx": {
+    "version": "v1.0.4",
+    "desc": "mynews weixin小程序"
+  }
+}
