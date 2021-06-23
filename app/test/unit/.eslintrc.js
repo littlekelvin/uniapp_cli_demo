@@ -4,6 +4,7 @@ module.exports = {
     beforeAll: 'true',
     program: 'true',
     it: 'true',
-    expect: 'true'
+    expect: 'true',
+    jest: 'true'
   }
 }

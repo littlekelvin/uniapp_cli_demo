@@ -1,3 +1,4 @@
+import request from '@/api/news.api'
 
 describe('test pages test.vue', () => {
   let page

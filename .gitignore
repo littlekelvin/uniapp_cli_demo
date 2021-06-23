@@ -3,7 +3,7 @@ node_modules/
 app/node_modules/
 apap/unpackage/
 app/dist/
-app/src/test/unit/coverage
+app/test/unit/coverage
 
 # local env files
 .env.local
