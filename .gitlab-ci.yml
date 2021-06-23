@@ -5,6 +5,7 @@ variables:
 stages:
   - prepare
   - test
+  - analysis
   - build
   - deploy
 
@@ -23,17 +24,33 @@ prepare:
   tags:
     - NODE_10_15_1
 
-test:
-  stage: test
+sonar-analysis:
+  stage: analysis
 #  cache:
 #    key: mynews_demo_node_modules
 #    policy: pull
 #    paths:
 #      - app/node_modules
   script:
+    - echo "sonar-analysis job"
+  only:
+    - master
+    - kelvin
+  tags:
+    - NODE_10_15_1
+
+test:
+  stage: test
+  #  cache:
+  #    key: mynews_demo_node_modules
+  #    policy: pull
+  #    paths:
+  #      - app/node_modules
+  script:
     - echo "test job"
   only:
     - master
+    - kelvin
   tags:
     - NODE_10_15_1
 

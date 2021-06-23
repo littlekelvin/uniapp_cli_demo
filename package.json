@@ -6,7 +6,7 @@
     "miniprogram-ci": "^1.2.3"
   },
   "wx": {
-    "version": "v1.0.5",
+    "version": "v1.0.6",
     "desc": "mynews weixin小程序"
   }
 }
