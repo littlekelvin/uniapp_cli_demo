@@ -4,6 +4,7 @@ app/node_modules/
 apap/unpackage/
 app/dist/
 app/test/unit/coverage
+app/.scannerwork
 
 # local env files
 .env.local
