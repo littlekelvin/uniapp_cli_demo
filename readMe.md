@@ -31,6 +31,13 @@ npm run build:mp-weixin
 ```
 npm run build:custom mp-dingtalk
 ```
+
+### Test
+```
+npm install puppeteer --save-dev
+npm run test
+```
+
 ### 开发者工具创建项目打开
 运行或者发行的minifies文件在 /dist/dev  /dist/build下，使用对应开发者工具打开新建项目即可
 

@@ -4,6 +4,12 @@ module.exports = {
   testEnvironment: '@dcloudio/uni-automator/dist/environment.js',
   testEnvironmentOptions: {
     compile: true,
+    h5: { // 为了节省测试时间，可以指定一个 H5 的 url 地址，若不指定，每次运行测试，会先 npm run dev:h5
+      url: "http://127.0.0.1:8080/h5/",
+      options: {
+        headless: true // 配置是否显示 puppeteer 测试窗口
+      }
+    },
     'mp-weixin': {
       port: 9420, // 默认 9420
       account: '', // 测试账号

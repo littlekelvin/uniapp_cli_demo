@@ -37,7 +37,7 @@
     "info": "node node_modules/@dcloudio/vue-cli-plugin-uni/commands/info.js",
     "serve:quickapp-native": "node node_modules/@dcloudio/uni-quickapp-native/bin/serve.js",
     "test:android": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=android jest -i",
-    "test:h5": "cross-env UNI_PLATFORM=h5 jest -i",
+    "test:h5": "cross-env UNI_PLATFORM=h5 jest -i --config=test/unit/jest.conf.js --coverage",
     "test:ios": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=ios jest -i",
     "test:mp-baidu": "cross-env UNI_PLATFORM=mp-baidu jest -i",
     "test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i --config=test/unit/jest.conf.js --coverage"
@@ -99,6 +99,7 @@
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",
     "prettier": "^2.3.1",
+    "puppeteer": "^10.0.0",
     "sass": "^1.35.1",
     "sass-loader": "^10.1.1",
     "vue-template-compiler": "^2.6.11"
