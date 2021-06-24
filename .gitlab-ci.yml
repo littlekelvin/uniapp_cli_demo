@@ -32,7 +32,7 @@ test:
     paths:
       - app/node_modules
   script:
-    - npm run test
+    - cd app && npm run test
   only:
     - master
     - kelvin
