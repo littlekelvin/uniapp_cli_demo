@@ -3,6 +3,7 @@
 ## Project setup
 - install dependency
 ```
+setx PUPPETEER_SKIP_DOWNLOAD true
 npm install
 ```
 - setup eslit and prettier
