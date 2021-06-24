@@ -24,35 +24,56 @@ prepare:
   tags:
     - NODE_10_15_1
 
-sonar-analysis:
-  stage: analysis
-#  cache:
-#    key: mynews_demo_node_modules
-#    policy: pull
-#    paths:
-#      - app/node_modules
+test:
+  stage: test
+  cache:
+    key: mynews_demo_node_modules
+    policy: pull
+    paths:
+      - app/node_modules
   script:
-    - echo "sonar-analysis job"
+    - npm run test
   only:
     - master
     - kelvin
   tags:
     - NODE_10_15_1
 
-test:
-  stage: test
-  #  cache:
-  #    key: mynews_demo_node_modules
-  #    policy: pull
-  #    paths:
-  #      - app/node_modules
+sonar_preview:
+  stage: analysis
+  dependencies:
+    - test
+  image: ciricihq/gitlab-sonar-scanner:latest
+  variables:
+    SONAR_URL: http://zha-mvp-023-w10:9090
+    SONAR_ANALYSIS_MODE: preview
   script:
-    - echo "test job"
-  only:
-    - master
+    - gitlab-sonar-scanner
+      -Dsonar.gitlab.project_id=$CI_PROJECT_ID
+      -Dsonar.gitlab.commit_sha=$CI_COMMIT_SHA
+      -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME
+  except:
+#    - master@bcms/web/bcms_web_workbench
     - kelvin
   tags:
-    - NODE_10_15_1
+    - SONAR_PREVIEW
+
+sonar_analyze:
+  stage: analysis
+  dependencies:
+    - test
+  image: ciricihq/gitlab-sonar-scanner:latest
+  variables:
+    GIT_STRATEGY: clone
+    GIT_DEPTH: "0"
+    SONAR_URL: http://zha-mvp-023-w10:9090
+    SONAR_ANALYSIS_MODE: publish
+  script:
+    - gitlab-sonar-scanner
+  only:
+    - kelvin
+  tags:
+    - SONAR_PREVIEW
 
 build:
   stage: build
