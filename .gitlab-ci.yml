@@ -17,6 +17,7 @@ prepare:
       - node_modules
       - app/node_modules
   script:
+    - pwd
     - npm install --registry https://registry.npm.taobao.org
     - cd app & npm install
   only:
@@ -32,6 +33,7 @@ test:
     paths:
       - app/node_modules
   script:
+    - pwd
     - cd app & npm run test
   only:
     - master
