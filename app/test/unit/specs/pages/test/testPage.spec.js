@@ -14,7 +14,8 @@ describe('test pages test.vue', () => {
     done()
   })
 
-  it('test', () => {
+  it('test', (done) => {
     expect(true).toBe(true)
+    done()
   })
 })

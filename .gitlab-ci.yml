@@ -20,6 +20,7 @@ prepare:
     - pwd
     - npm install --registry https://registry.npm.taobao.org
     - cd app
+    - setx PUPPETEER_SKIP_DOWNLOAD true
     - npm install
   only:
     - kelvin
