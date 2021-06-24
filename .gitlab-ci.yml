@@ -19,7 +19,8 @@ prepare:
   script:
     - pwd
     - npm install --registry https://registry.npm.taobao.org
-    - cd app & npm install
+    - cd app
+    - npm install
   only:
     - kelvin
   tags:
@@ -34,7 +35,8 @@ test:
       - app/node_modules
   script:
     - pwd
-    - cd app & npm run test
+    - cd app
+    - npm run test
   only:
     - master
     - kelvin
