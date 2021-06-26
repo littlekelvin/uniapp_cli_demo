@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import i18n from './i18n'
 import store from './store'
+import '../env'
 
 Vue.config.productionTip = false
 

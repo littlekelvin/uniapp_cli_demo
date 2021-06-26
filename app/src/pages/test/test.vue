@@ -21,6 +21,10 @@
     data() {
       return {}
     },
+    onLoad() {
+      console.log('process', process.env)
+      console.log('process', process.uniEnv.GATEWAY_URL)
+    },
     computed: {
       ...mapGetters('User', ['username'])
     },
