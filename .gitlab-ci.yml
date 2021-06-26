@@ -44,41 +44,17 @@ test:
   tags:
     - MY_NEW
 
-#sonar_preview:
+#analysis:
 #  stage: analysis
-#  dependencies:
-#    - test
-#  image: ciricihq/gitlab-sonar-scanner:latest
-#  variables:
-#    SONAR_URL: http://zha-mvp-023-w10:9090
-#    SONAR_ANALYSIS_MODE: preview
 #  script:
-#    - gitlab-sonar-scanner
-#      -Dsonar.gitlab.project_id=$CI_PROJECT_ID
-#      -Dsonar.gitlab.commit_sha=$CI_COMMIT_SHA
-#      -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME
-#  except:
-##    - master@bcms/web/bcms_web_workbench
-#    - kelvin
-#  tags:
-#    - SONAR_PREVIEW
-#
-#sonar_analyze:
-#  stage: analysis
-#  dependencies:
-#    - test
-#  image: ciricihq/gitlab-sonar-scanner:latest
-#  variables:
-#    GIT_STRATEGY: clone
-#    GIT_DEPTH: "0"
-#    SONAR_URL: http://zha-mvp-023-w10:9090
-#    SONAR_ANALYSIS_MODE: publish
-#  script:
-#    - gitlab-sonar-scanner
+#    - pwd
+#    - cd app
+#    - sonar-scanner
 #  only:
+#    - master
 #    - kelvin
 #  tags:
-#    - SONAR_PREVIEW
+#    - MY_NEW
 
 build:
   stage: build

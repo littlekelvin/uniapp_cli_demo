@@ -32,9 +32,6 @@
       }
     },
     async onLoad() {
-      uni.showLoading({
-        title: 'loading'
-      })
       const res = await getNewsList()
       this.news = res
     },

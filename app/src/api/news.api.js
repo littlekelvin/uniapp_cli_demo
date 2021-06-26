@@ -1,5 +1,6 @@
 import request from '@/common/utils/request'
-
+const baseUrl = `${process.uniEnv.GATEWAY_URL}/api`
 export const getNewsList = () => {
-  return request.get('/news')
+  console.log('url', baseUrl)
+  return request.get({url: `${baseUrl}/news`})
 }

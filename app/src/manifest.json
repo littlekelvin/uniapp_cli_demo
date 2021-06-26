@@ -72,5 +72,18 @@
     },
     "mp-qq" : {
         "usingComponents" : true
+    },
+    "h5" : {
+        "devServer" : {
+            "port" : 8081,
+            "disableHostCheck" : true,
+            "proxy" : {
+                "/api/news" : {
+                    "target" : "https://unidemo.dcloud.net.cn", //目标接口域名
+                    "changeOrigin" : true,  //是否跨域
+                    "secure" : false  // 设置支持https协议的代理
+                }
+            }
+        }
     }
 }
