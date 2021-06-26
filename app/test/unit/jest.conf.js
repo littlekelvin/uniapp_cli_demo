@@ -4,10 +4,11 @@ module.exports = {
   testEnvironment: '@dcloudio/uni-automator/dist/environment.js',
   testEnvironmentOptions: {
     compile: true,
-    h5: { // 为了节省测试时间，可以指定一个 H5 的 url 地址，若不指定，每次运行测试，会先 npm run dev:h5
-      url: "http://127.0.0.1:8080/h5/",
+    h5: {
+      // 为了节省测试时间，可以指定一个 H5 的 url 地址，若不指定，每次运行测试，会先 npm run dev:h5
+      url: 'http://127.0.0.1:8080/h5/',
       options: {
-        headless: true // 配置是否显示 puppeteer 测试窗口
+        headless: false // 配置是否显示 puppeteer 测试窗口
       }
     },
     'mp-weixin': {
@@ -16,9 +17,9 @@ module.exports = {
       args: '', // 指定开发者工具参数
       cwd: '', // 指定开发者工具工作目录
       launch: true, // 是否主动拉起开发者工具
-      teardown: 'disconnect', // 可选值 "disconnect"|"close" 运行测试结束后，断开开发者工具或关闭开发者工具
+      teardown: 'close', // 可选值 "disconnect"|"close" 运行测试结束后，断开开发者工具或关闭开发者工具
       remote: false, // 是否真机自动化测试
-      executablePath: 'C:/softwareinstalled/wechatTools/微信web开发者工具/cli.bat' // 开发者工具cli路径，默认会自动查找,  windows: C:/Program Files (x86)/Tencent/微信web开发者工具/cli.bat", mac: /Applications/wechatwebdevtools.app/Contents/MacOS/cli
+      executablePath: 'C:/softwareInstalled/wechatdevtoosRC/微信web开发者工具/cli.bat' // 开发者工具cli路径，默认会自动查找,  windows: C:/Program Files (x86)/Tencent/微信web开发者工具/cli.bat", mac: /Applications/wechatwebdevtools.app/Contents/MacOS/cli
     }
   },
   testTimeout: 15000,

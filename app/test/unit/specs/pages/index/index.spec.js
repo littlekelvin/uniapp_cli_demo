@@ -10,8 +10,8 @@ describe('index pages test.vue', () => {
 
     it('should have three news to show in page', async done => {
         expect(page.path).toBe('pages/index/index')
-        // const wrap = await page.$('template')
-        // console.log('wrap', wrap)
+        const wrap = await page.$('uni-media-list-body')
+        console.log('wrap', wrap)
         done()
     })
 })
