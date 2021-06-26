@@ -1,4 +1,3 @@
-
 describe('test pages test.vue', () => {
   let page
   beforeAll(async done => {
@@ -14,7 +13,7 @@ describe('test pages test.vue', () => {
     done()
   })
 
-  it('test', (done) => {
+  it('test', done => {
     expect(true).toBe(true)
     done()
   })
