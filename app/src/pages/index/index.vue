@@ -47,6 +47,12 @@
         if (process.env.NODE_ENV === 'production') {
           console.log('prod')
         }
+        //#ifdef MP-WEIXIN
+        console.log('weixin')
+        //#endif
+        //#ifdef MP-ALIPAY
+        console.log('dingtalk')
+        //#endif
         uni.navigateTo({
           url: '../info/info?newsId=' + e.currentTarget.dataset.newsid
         })
